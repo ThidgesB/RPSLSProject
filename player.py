@@ -1,1 +1,4 @@
-#SuperClass for human and robot
+class Player:
+  def __init__(self):
+    self.name = input("")
+    pass
