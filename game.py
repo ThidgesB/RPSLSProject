@@ -10,14 +10,14 @@ class Game:
         print('Winning a round will give you one point.\nThe goal is to have 2 wins to beat your opponent.\n')
 
     def game_type(self): #tested
-        user_input = int(input('Type [1] for a single player game.\nType [2] for a double player game.\n'))
-        if user_input == 1 or 2: #temporary
+        self.user_input = int(input('Type [1] for a single player game.\nType [2] for a double player game.\n'))
+        if self.user_input == 1 or 2: #temporary
             self.single_player_game()
         print('Let\'s Begin!')
 
 
 
-    def single_player_game():
+    def single_player_game(self):
         pass
 
         
