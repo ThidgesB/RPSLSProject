@@ -3,7 +3,7 @@ import random
 
 class Robot(Player):
   def __init__(self):
-    self.robot_score = 0
+    self.player_two_score = 0
     self.name = ('Player Two')
 
     super().__init__()

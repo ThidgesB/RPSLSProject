@@ -47,3 +47,17 @@ def compare_gestures(self, human_choice, computer_choice):
             elif robot.robot_score == 2:
                 print('Player Two wins the game!')
                 self.game_over = True
+
+
+
+self.game_over = False
+        while self.game_over == False:
+            self.game_round()
+            if (self.player_one.human_score) and (self.player_two.robot_score) != 2:
+                self.game_over = False
+            elif self.player_one.human_score == 2:
+                print('Player One wins the game!')
+                self.game_over = True
+            elif self.player_two.robot_score == 2:
+                print('Player Two wins the game!')
+                self.game_over = True
