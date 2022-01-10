@@ -9,4 +9,13 @@ class Player:
   def choose_gesture(self):
     pass
 
- 
+# index[0] > index [2]
+# index[2] > index [1]
+# index[1] > index [0]
+# index[0] > index [3]
+# index[3] > index [4]
+# index[4] > index [2]
+# index[2] > index [3]
+# index[3] > index [1]
+# index[1] > index [4]
+# index[4] > index [0]
