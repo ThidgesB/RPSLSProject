@@ -1,12 +1,11 @@
 class Player:
-  def __init__(self, score):
+  def __init__(self):
     self.gesture_list = ['Rock', 'Paper', 'Scissors']  #add lizard and Spock when we've figured this out
+    self.gesture_list[0] > self.gesture_list[2]
+    self.gesture_list[1] > self.gesture_list[0]
+    self.gesture_list[2] > self.gesture_list[1]
     self.score = 0
     pass
 
   def choose_gesture(self):
-    self.user_input = int(input('Please choose a gesture: '))
-    self.temp_index = 0
-    for gesture in self.gesture_list:
-      print(f'Press [{self.temp_index}] for {gesture}')
-      self.temp_index += 1
+    pass

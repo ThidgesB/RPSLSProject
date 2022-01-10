@@ -1,3 +1,7 @@
+from player import Player
+from robot import Robot
+test = Robot()
+
 class Game:
     def __init__(self):
         pass
@@ -25,5 +29,8 @@ class Game:
     def run_game(self):
         self.display_welcome()
         self.game_type()
+        test.choose_gesture()
+        
+        
 
     
