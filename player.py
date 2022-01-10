@@ -4,8 +4,9 @@ class Player:
     self.gesture_list[0] > self.gesture_list[2]
     self.gesture_list[1] > self.gesture_list[0]
     self.gesture_list[2] > self.gesture_list[1]
-    self.score = 0
     pass
 
   def choose_gesture(self):
     pass
+
+ 
