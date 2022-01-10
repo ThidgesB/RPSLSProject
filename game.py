@@ -24,53 +24,51 @@ class Game:
 
 
     def single_player_game(self):
-        self.game_over = False
-        while self.game_over == False:
             human.choose_gesture(self)
             robot.choose_gesture(self)
             self.compare_gestures(self)     #compare gestures
+            pass
 
-        pass
-
-        
+    def game_round(self):
+        self.compare_gestures(human.choose_gesture(), robot.choose_gesture())
+        self.show_score()
 
     def run_game(self):
         self.display_welcome()
         # self.game_type()
-        # human.choose_gesture()
-        # robot.choose_gesture() #temporary
-        self.compare_gestures(human.choose_gesture(), robot.choose_gesture())
-        self.show_score()
-
+        self.game_round()
+        #restart game?
 
     def compare_gestures(self, human_choice, computer_choice):
-        
-        if human_choice > computer_choice:
-            human.human_score += 1
-
-            return(human.human_score)
-        
-        elif human_choice == computer_choice:
+        if human_choice == computer_choice:
             print('It\'s a tie!')
             self.single_player_game()
-
-        else:
+        elif ((human_choice == 0) and (computer_choice is 2 or 3)) or ((human_choice == 1) and (computer_choice is 0 or 4)) or ((human_choice == 2) and (computer_choice is 1 or 3)) or ((human_choice == 3) and (computer_choice is 4 or 1)) or ((human_choice == 4) and (computer_choice is 2 or 0)):
+            human.human_score += 1
+            print('Player One wins this round!')  
+            return human.human_score 
+        else: 
             robot.robot_score += 1
-            return (robot.robot_score)
+            print('Player Two wins this round!') 
+            return robot.robot_score
     
 
     def show_score(self):
-        if human.human_score == 2:
-            print("Player One is the winner!")
-            self.game_over == True
-            
-        elif robot.robot_score == 2:
-            print("Player Two is the winner!")
-            self.game_over == True  
-        
-        else:
-            print(f'Player One : {human.human_score}  |  Player Two: {robot.robot_score}')
-            self.game_over = False            
+        print(f'Player One : {human.human_score}  |  Player Two: {robot.robot_score}')
+        self.declare_winner()
+
+    def declare_winner(self):
+        self.game_over = False
+        while self.game_over == False:
+            self.game_round()
+            if (human.human_score) and (robot.robot_score) != 2:
+                self.game_over = False
+            elif human.human_score == 2:
+                print('Player One wins the game!')
+                self.game_over = True
+            elif robot.robot_score == 2:
+                print('Player Two wins the game!')
+                self.game_over = True
 
 
 #bonus: play again function
