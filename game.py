@@ -8,6 +8,7 @@ class Game:
     def __init__(self):
         self.player_one = Human()
         self.player_two = None
+        self.player_one.player_order = 1
 
     def input_check(self, message):
         while True:
@@ -34,6 +35,7 @@ class Game:
             # self.single_player_game()
         elif user_input == 2:
             self.player_two = Human()
+            self.player_two.player_order = 2
             self.game_round()
         else:
             print('Incorrect input')
@@ -73,7 +75,7 @@ class Game:
         self.declare_winner()
 
     def declare_winner(self):
-            if ((self.player_one.player_one_score) or (self.player_two.player_two_score)) != 2:
+            if self.player_one.player_one_score != 2 and self.player_two.player_two_score != 2:
                 self.game_round()
 
             elif self.player_one.player_one_score == 2:

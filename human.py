@@ -5,6 +5,7 @@ class Human(Player):
     self.name = ('Player One')
     self.player_one_score = 0
     self.player_two_score = 0
+    self.player_order = 0
     super().__init__()
 
   def input_check(self, message):
@@ -12,18 +13,21 @@ class Human(Player):
             try:
                 user_input = int(input(message))
             except ValueError:
-                print("Please enter a number")
+                print("\nPlease enter a number")
                 continue
             else:
                 return user_input
 
 
   def choose_gesture(self):
+    print(f'\nPlayer {self.player_order}')
     self.show_gesture()
     self.user_input = self.input_check('\nPlease choose a gesture: ')
-    #self.user_input = int(input('Please choose a gesture: '))
-    #self.user_choice = index[self.user_input]
-    return self.user_input            #return user input
+    if self.user_input not in range(len(self.gesture_list)):
+      print('\nIncorrect Input')
+      self.choose_gesture()
+    else:
+      return self.user_input            #return user input
     
 
   def show_gesture(self):
