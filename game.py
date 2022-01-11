@@ -1,8 +1,6 @@
-import sys
 from robot import Robot
 from human import Human
-# robot = Robot()
-# human = Human()
+import sys
 
 class Game:
     def __init__(self):
@@ -40,11 +38,10 @@ class Game:
         else:
             print('Incorrect input')
             self.game_type()
-        
-
 
     # def single_player_game(self):
     #     self.game_round()
+
 
     def game_round(self):
         self.compare_gestures(self.player_one.choose_gesture(), self.player_two.choose_gesture())
@@ -71,7 +68,7 @@ class Game:
     
 
     def show_score(self):
-        print(f'Player One : {self.player_one.player_one_score}  |  Player Two: {self.player_two.player_two_score}\n')
+        print(f'Player One : {self.player_one.player_one_score}  |  Player Two: {self.player_two.player_two_score}')
         self.declare_winner()
 
     def declare_winner(self):

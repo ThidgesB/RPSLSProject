@@ -5,7 +5,6 @@ class Robot(Player):
   def __init__(self):
     self.player_two_score = 0
     self.name = ('Player Two')
-
     super().__init__()
 
   def choose_gesture(self):
@@ -13,12 +12,7 @@ class Robot(Player):
     return self.robot_choice
 
   def random_selection(self, selection):
-      random_index = random.randint(0,len(selection)-1)
-      result = selection.index(selection[random_index])
-      print(f'Player Two chose {result}')
-      return result
-
-
-    #import random
-    #create the list
-    #
+    random_index = random.randint(0,len(selection)-1)
+    result = selection.index(selection[random_index])
+    print(f'Player Two chose {result}')
+    return result
